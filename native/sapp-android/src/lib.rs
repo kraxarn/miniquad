@@ -1308,3 +1308,7 @@ pub unsafe fn sapp_load_asset(filepath: *const ::std::os::raw::c_char, out: *mut
 pub unsafe fn sapp_is_elapsed_timer_supported() -> bool {
     return false;
 }
+
+pub unsafe fn sapp_internal_data_path() -> *const ::std::os::raw::c_char {
+    (*lock_shared_state().activity).internalDataPath
+}
